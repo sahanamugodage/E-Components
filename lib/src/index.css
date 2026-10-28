@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: var(--font--family);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--protal--background);
+    color: var(--protal--text);
+}
+
+
+*::-webkit-scrollbar-track {
+    background-color: var(--protal--background) !important;
+}
+
+
+*::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--protal--background) !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--protal--surface);
+    border-radius: 4px;
+}
+
+@import url("./shared/fonts/fonts.css");

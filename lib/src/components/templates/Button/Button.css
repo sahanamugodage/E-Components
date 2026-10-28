@@ -1,0 +1,443 @@
+.btn-root {
+    --btn--background: var(--protal--background, #ffffff);
+    --btn--surface: var(--protal--surface, #f8fafc);
+    --btn--border: var(--border--default, #e2e8f0);
+    --btn--border--hover: var(--border--hover, #cbd5e1);
+    --btn--text: var(--protal--text, #0f172a);
+    --btn--text--secondary: var(--text-secondary, #64748b);
+    --btn--text--muted: var(--text-placeholder, #94a3b8);
+    --btn--primary: var(--main--background, #18181b);
+    --btn--primary--text: var(--main--text, #ffffff);
+    --btn--primary--hover: color-mix(in srgb, var(--btn--primary) 90%, #000000);
+    --btn--destructive: #ef4444;
+    --btn--destructive--text: #ffffff;
+    --btn--destructive--hover: #dc2626;
+    --btn--success: #22c55e;
+    --btn--radius: 1rem;
+    --btn--radius--sm: 0.375rem;
+    --btn--radius--full: 9999px;
+    --btn--font--family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --btn--font--size: 13px;
+    --btn--font--weight: 500;
+    --btn--transition: 150ms ease;
+    --btn--shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 32px;
+    border: 1px solid var(--btn--border);
+    border-radius: var(--btn--radius);
+    background-color: var(--btn--background);
+    color: var(--btn--text);
+    font-family: var(--btn--font--family);
+    font-size: var(--btn--font--size);
+    font-weight: var(--btn--font--weight);
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    text-decoration: none;
+    transition:
+        background-color var(--btn--transition),
+        border-color var(--btn--transition),
+        color var(--btn--transition),
+        box-shadow var(--btn--transition),
+        opacity var(--btn--transition);
+    outline: none;
+}
+
+.btn-root:hover:not(.btn-root--disabled) {
+    border-color: var(--btn--border--hover);
+    background-color: var(--btn--surface);
+    box-shadow: var(--btn--shadow);
+}
+
+.btn-root:focus-visible {
+    box-shadow: 0 0 0 2px var(--btn--background), 0 0 0 4px var(--btn--primary);
+}
+
+.btn-root:active:not(.btn-root--disabled) {
+    transform: scale(0.98);
+}
+
+.btn-root--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-root--full-width {
+    width: 100%;
+}
+
+/* Sizes */
+.btn-root--xs {
+    --btn--font--size: 11px;
+    height: 24px;
+    padding: 0 8px;
+    gap: 4px;
+    border-radius: var(--btn--radius--sm);
+}
+
+.btn-root--sm {
+    --btn--font--size: 12px;
+    height: 28px;
+    padding: 0 10px;
+    gap: 5px;
+}
+
+.btn-root--md {
+    --btn--font--size: 13px;
+    height: 32px;
+    padding: 0 14px;
+    gap: 6px;
+}
+
+.btn-root--lg {
+    --btn--font--size: 14px;
+    height: 38px;
+    padding: 0 18px;
+    gap: 8px;
+}
+
+.btn-root--icon {
+    padding: 0;
+}
+
+.btn-root--icon-only {
+    width: var(--btn--icon-size, 32px);
+    height: var(--btn--icon-size, 32px);
+    padding: 0;
+}
+
+.btn-root--xs.btn-root--icon-only {
+    --btn--icon-size: 24px;
+}
+
+.btn-root--sm.btn-root--icon-only {
+    --btn--icon-size: 28px;
+}
+
+.btn-root--md.btn-root--icon-only {
+    --btn--icon-size: 32px;
+}
+
+.btn-root--lg.btn-root--icon-only {
+    --btn--icon-size: 38px;
+}
+
+/* Variants */
+.btn-root--default {
+    background-color: var(--btn--background);
+    border-color: var(--btn--border);
+    color: var(--btn--text);
+}
+
+.btn-root--default:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+}
+
+.btn-root--primary {
+    background-color: var(--btn--primary);
+    border-color: var(--btn--primary);
+    color: var(--btn--primary--text);
+}
+
+.btn-root--primary:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--primary--hover);
+    border-color: var(--btn--primary--hover);
+}
+
+.btn-root--primary:focus-visible {
+    box-shadow: 0 0 0 2px var(--btn--background), 0 0 0 4px var(--btn--primary);
+}
+
+.btn-root--secondary {
+    background-color: var(--btn--surface);
+    border-color: transparent;
+    color: var(--btn--text);
+}
+
+.btn-root--secondary:hover:not(.btn-root--disabled) {
+    background-color: color-mix(in srgb, var(--btn--surface) 80%, var(--btn--border));
+}
+
+.btn-root--outline {
+    background-color: transparent;
+    border-color: var(--btn--border);
+    color: var(--btn--text);
+}
+
+.btn-root--outline:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+}
+
+.btn-root--ghost {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--btn--text--secondary);
+}
+
+.btn-root--ghost:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+    color: var(--btn--text);
+}
+
+.btn-root--destructive {
+    background-color: var(--btn--destructive);
+    border-color: var(--btn--destructive);
+    color: var(--btn--destructive--text);
+}
+
+.btn-root--destructive:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--destructive--hover);
+    border-color: var(--btn--destructive--hover);
+}
+
+.btn-root--destructive:focus-visible {
+    box-shadow: 0 0 0 2px var(--btn--background), 0 0 0 4px var(--btn--destructive);
+}
+
+/* Success State */
+.btn-root--success.btn-root--default {
+    background-color: var(--btn--success);
+    border-color: var(--btn--success);
+    color: #ffffff;
+}
+
+.btn-root--success.btn-root--primary {
+    background-color: var(--btn--success);
+    border-color: var(--btn--success);
+}
+
+.btn-root--success.btn-root--outline {
+    border-color: var(--btn--success);
+    color: var(--btn--success);
+}
+
+/* Text */
+.btn-text {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+/* Icons */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-icon--left {
+    margin-right: -2px;
+}
+
+.btn-icon--right {
+    margin-left: -2px;
+}
+
+.btn-icon--only {
+    margin: 0;
+}
+
+/* Loading */
+.btn-root--loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn-loader {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.btn-root--loading .btn-loader {
+    color: var(--btn--text);
+}
+
+.btn-root--loading.btn-root--primary .btn-loader {
+    color: var(--btn--primary--text);
+}
+
+.btn-root--loading.btn-root--destructive .btn-loader {
+    color: var(--btn--destructive--text);
+}
+
+.btn-loader__spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: btn-spin 0.6s linear infinite;
+}
+
+.btn-root--xs .btn-loader__spinner {
+    width: 12px;
+    height: 12px;
+    border-width: 1.5px;
+}
+
+.btn-root--lg .btn-loader__spinner {
+    width: 16px;
+    height: 16px;
+}
+
+@keyframes btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success Icon */
+.btn-success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.btn-root--success .btn-success-icon {
+    color: #ffffff;
+}
+
+.btn-root--success.btn-root--outline .btn-success-icon {
+    color: var(--btn--success);
+}
+
+
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .btn-root {
+        transition: none;
+    }
+
+    .btn-loader__spinner {
+        animation: none;
+    }
+
+    .btn-root:active:not(.btn-root--disabled) {
+        transform: none;
+    }
+}
+
+/* ====================================================================
+   APPEARANCE: "outlined"
+   When .btn-root--outlined is present, the variant's color becomes the
+   border + text instead of the background. Transparent background.
+   ==================================================================== */
+
+.btn-root--outlined {
+    background-color: transparent;
+}
+
+/* --- Default (neutral) outlined --- */
+.btn-root--outlined.btn-root--default {
+    border-color: var(--btn--border);
+    color: var(--btn--text);
+}
+
+.btn-root--outlined.btn-root--default:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+    border-color: var(--btn--border--hover);
+}
+
+/* --- Primary outlined --- */
+.btn-root--outlined.btn-root--primary {
+    border-color: var(--btn--primary);
+    color: var(--btn--primary);
+}
+
+.btn-root--outlined.btn-root--primary:hover:not(.btn-root--disabled) {
+    background-color: color-mix(in srgb, var(--btn--primary) 10%, transparent);
+    border-color: var(--btn--primary--hover);
+    color: var(--btn--primary--hover);
+}
+
+.btn-root--outlined.btn-root--primary:focus-visible {
+    box-shadow: 0 0 0 2px var(--btn--background), 0 0 0 4px var(--btn--primary);
+}
+
+/* --- Secondary outlined --- */
+.btn-root--outlined.btn-root--secondary {
+    border-color: var(--btn--border);
+    color: var(--btn--text);
+}
+
+.btn-root--outlined.btn-root--secondary:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+    border-color: var(--btn--border--hover);
+}
+
+/* --- Destructive outlined (the one you asked about) --- */
+.btn-root--outlined.btn-root--destructive {
+    border-color: var(--btn--destructive);
+    color: var(--btn--destructive);
+}
+
+.btn-root--outlined.btn-root--destructive:hover:not(.btn-root--disabled) {
+    background-color: color-mix(in srgb, var(--btn--destructive) 10%, transparent);
+    border-color: var(--btn--destructive--hover);
+    color: var(--btn--destructive--hover);
+}
+
+.btn-root--outlined.btn-root--destructive:focus-visible {
+    box-shadow: 0 0 0 2px var(--btn--background), 0 0 0 4px var(--btn--destructive);
+}
+
+/* --- Ghost outlined (essentially same as ghost) --- */
+.btn-root--outlined.btn-root--ghost {
+    border-color: transparent;
+    color: var(--btn--text--secondary);
+}
+
+.btn-root--outlined.btn-root--ghost:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+    color: var(--btn--text);
+}
+
+/* ====================================================================
+   Loading state — spinner inherits the variant color when outlined
+   ==================================================================== */
+
+.btn-root--outlined.btn-root--primary.btn-root--loading .btn-loader {
+    color: var(--btn--primary);
+}
+
+.btn-root--outlined.btn-root--destructive.btn-root--loading .btn-loader {
+    color: var(--btn--destructive);
+}
+
+/* ====================================================================
+   Success state — outlined buttons get success-colored border + text
+   ==================================================================== */
+
+.btn-root--outlined.btn-root--success.btn-root--default {
+    border-color: var(--btn--success);
+    color: var(--btn--success);
+}
+
+.btn-root--outlined.btn-root--success .btn-success-icon {
+    color: var(--btn--success);
+}
+
+/* DELETE — no longer emitted by the component */
+.btn-root--outline {
+    background-color: transparent;
+    border-color: var(--btn--border);
+    color: var(--btn--text);
+}
+
+.btn-root--outline:hover:not(.btn-root--disabled) {
+    background-color: var(--btn--surface);
+}
